@@ -11,8 +11,7 @@ function kuadratBiasa(x) {
 const kuadrat = (x) => {
   return x * x;
 };
-
-// Arrow function ringkas (implicit return)
+// 1. Arrow function ringkas (implicit return)
 const kuadratRingkas = (x) => x * x;
 console.log("=== Perbandingan Penulisan ===");
 console.log("Biasa :", kuadratBiasa(5)); // 25
@@ -25,7 +24,6 @@ console.log("Luas 4x6 :", luas(4, 6));
 console.log(salam("Budi", "Pagi"));
 // --- 3. Callback: function sebagai argumen ---
 function lakukanOperasi(angka, operasiCallback) {
-  S;
   console.log(`Angka awal: ${angka}`);
   const hasil = operasiCallback(angka);
   console.log(`Hasil setelah operasi: ${hasil}`);
@@ -45,26 +43,29 @@ setTimeout(() => {
 }, 1000); // 1000 milidetik = 1 detik
 console.log("Pesan 2: Setelah mendaftarkan timer");
 
-// 2. Arrow function huruf besar
-const keHurufBesar = (str) => str.toUpperCase();
+// 1. Arrow function keHurufBesar
+const keHurufBesar = (teks) => teks.toUpperCase();
 
-// 3. Arrow function tambah !!!
-const tambahSeru = (str) => `${str}!!!`;
+// 2. Arrow function tambahSeru
+const tambahSeru = (teks) => teks + "!!!";
 
-// 4. Arrow function hitung kata
-const hitungKata = (str) => str.split(" ").length;
+// 3. Arrow function hitungKata
+const hitungKata = (teks) => teks.split().length;
 
-// 5. Function dengan callback
-const prosesKalimat = (kalimat, transformasiCallback) => {
+// 4. Function prosesKalimat
+function prosesKalimat(kalimat, transformasiCallback) {
   const hasil = transformasiCallback(kalimat);
   console.log(hasil);
-};
+}
 
-// 6. Pengujian
+// 5. Uji semua function
 const kalimat = "belajar javascript itu menyenangkan";
 
-console.log("=== Hasil Transformasi ===");
-
 prosesKalimat(kalimat, keHurufBesar);
+// Output: BELAJAR JAVASCRIPT ITU MENYENANGKAN
+
 prosesKalimat(kalimat, tambahSeru);
+// Output: belajar javascript itu menyenangkan!!!
+
 prosesKalimat(kalimat, hitungKata);
+// Output: 4
